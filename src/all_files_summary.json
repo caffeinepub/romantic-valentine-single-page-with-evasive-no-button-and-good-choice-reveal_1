@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Defines a simple actor exposing getDeploymentDomain, returning the slug \"valentine-surprise\".",
+  "feature_evidence.json": "Feature evidence report documenting a requirement about displaying a specific uploaded image in OneMoreThingInteraction.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing major frontend files, components, styles, and configuration.",
+  "frontend/deployment.json": "Specifies the deployment domain as \"valentine-surprise\".",
+  "frontend/index.css": "Global Tailwind CSS setup with OKLCH color variables and light/dark theme overrides.",
+  "frontend/index.html": "Standard HTML entry point loading the React app with the title \"Valentine Surprise\".",
+  "frontend/src/App.tsx": "Main React component implementing the interactive Valentine flow with reveal states, evasive No button, background audio, and final interaction section.",
+  "frontend/src/components/AudioStatusIndicator.tsx": "Displays a dismissible UI alert for audio playback errors.",
+  "frontend/src/components/MessageCoverOverlay.tsx": "Envelope-style cover component that triggers the message reveal animation when clicked.",
+  "frontend/src/components/OneMoreThingInteraction.tsx": "Three-step button interaction that ends by showing a custom image and a personalized message.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and managing a backend actor tied to the user’s identity with query invalidation logic.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity auth provider and hook managing login, logout, identity state, and stored sessions.",
+  "frontend/src/index.css": "Tailwind base, components, utilities plus custom OKLCH theme variables for light/dark romantic palette and animation utility classes.",
+  "frontend/src/main.tsx": "Initializes React app, sets up React Query and InternetIdentityProvider, and mounts App with global styles.",
+  "frontend/tailwind.config.js": "Tailwind config extending theme with OKLCH color tokens, typography, container queries, animations, and custom fonts/border radii.",
+  "project_state.json": "Project state describing a romantic Valentine web app, its features, constraints, known issues, and required assets."
+}

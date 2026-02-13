@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Build a simple romantic-themed interactive Valentine web page (HTML/CSS/JS) with Yes/No options where the No button evades hover and clicking Yes reveals a romantically formatted custom message (provided by the user), runnable locally in Chrome on Windows.",
+  "architectural_notes": [
+    "Replace the previous 'Good choice' meme image reveal with a romantically styled, well-formatted display of the provided custom text on Yes click (text layout-focused, no image dependency).",
+    "Deployment domain/slug must be 5–50 characters and contain only letters, numbers, and hyphens; avoid quotes/special characters to ensure publish succeeds.",
+    "Add an initial “message cover” overlay state; reveal the letter content only after an explicit user click/tap, using a smooth transition/animation.",
+    "Add a multi-step interactive CTA on the final slide that swaps the displayed option text on each click and finally reveals an image + additional message content.",
+    "Final reveal sequence must display the user-provided uploaded image asset (not a random/placeholder image)."
+  ],
+  "known_issues": [
+    "Background music/audio is not playing (user reports: \"sound is not coming actually\").",
+    "Final reveal is showing the wrong/random image instead of the user-provided uploaded image; needs to render the provided asset."
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Required Images\n- User-provided photo from upload 627674318_941888025190821_1390922055753035112_n.jpg (shona-surprise.dim_724x962.jpg)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-purpose-romantic-themed-landing-page-that-asks-will-you-be-my-valentine-and-presents-exactly-two-options-yes-and-no",
+      "title": "Create a single-purpose, romantic-themed landing page that asks: “Will you be my Valentine?” and presents exactly two options: “Yes” and “No”.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-interactive-behavior-for-the-no-option-so-that-when-the-user-hovers-over-or-attempts-to-interact-with-the-no-button-it-moves-to-a-new-position-within-the-visible-viewport-container-preventing-it-from-being-clicked",
+      "title": "Implement interactive behavior for the “No” option so that when the user hovers over (or attempts to interact with) the “No” button, it moves to a new position within the visible viewport/container, preventing it from being clicked.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-yes-replace-the-choice-ui-with-a-celebratory-view-that-displays-a-meme-image-and-shows-the-exact-text-good-choice",
+      "title": "When the user clicks “Yes”, replace the choice UI with a celebratory view that displays a meme image and shows the exact text: “Good choice”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-romantic-visual-theme-using-a-pink-and-white-color-scheme-across-the-whole-page-background-typography-buttons-and-spacing-and-ensure-the-page-remains-fully-client-side-and-runs-correctly-in-chrome-on-windows",
+      "title": "Apply a romantic visual theme using a pink-and-white color scheme across the whole page (background, typography, buttons, and spacing) and ensure the page remains fully client-side and runs correctly in Chrome on Windows.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-image-s-as-static-frontend-assets-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend-ui-do-not-serve-images-via-the-backend",
+      "title": "Add the required generated image(s) as static frontend assets under frontend/public/assets/generated and reference them directly from the frontend UI (do not serve images via the backend).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-post-acceptance-yes-click-view-so-it-no-longer-shows-the-meme-image-and-good-choice-heading-and-instead-displays-the-user-provided-message-as-a-clean-organized-romantic-letter-layout-e-g-a-heart-icon-a-short-romantic-title-readable-paragraphs-and-the-poem-formatted-as-a-distinct-quote-card",
+      "title": "Update the post-acceptance (\"Yes\" click) view so it no longer shows the meme image and \"Good choice\" heading, and instead displays the user-provided message as a clean, organized, romantic letter layout (e.g., a heart icon, a short romantic title, readable paragraphs, and the poem formatted as a distinct quote/card).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-following-english-text-as-the-exact-content-shown-in-the-accepted-state-letter-view-preserve-paragraph-breaks-and-line-breaks-in-the-poem-section-honestly-when-you-proposed-my-heart-literally-stopped-for-a-second-it-s-been-so-long-that-we-ve-been-together-and-in-every-phase-whether-it-s-laughter-silly-fights-mood-swings-or-life-s-tensions-we-both-understood-each-other-handled-everything-and-never-left-each-other-you-re-not-just-my-girlfriend-you-re-my-best-friend-my-peace-and-my-safe-place-we-ve-spent-so-much-time-together-random-calls-late-night-talks-laughing-for-no-reason-listening-to-each-other-s-problems-sometimes-giving-advice-sometimes-just-staying-quietly-together-and-all-of-those-moments-are-nothing-less-than-a-treasure-to-me-thank-you-for-being-so-patient-for-listening-to-all-my-nonsense-for-standing-with-me-in-my-stressful-times-and-for-making-me-feel-so-special-not-just-from-today-it-s-been-a-long-time-that-you-ve-been-my-valentine-today-it-just-became-official-a-little-poem-for-you-tere-saath-har-din-valentine-jaisa-lagta-hai-teri-hasi-se-mera-har-gham-halka-lagta-hai-tu-saath-ho-toh-darr-bhi-darr-nahi-lagta-sach-kahu-tu-hi-meri-duniya-tu-hi-mera-sab-lagta-hai-i-promise-no-matter-how-busy-or-tough-life-gets-i-will-always-stand-by-your-side-happy-valentine-s-day-my-love",
+      "title": "Use the following English text as the exact content shown in the accepted-state letter view (preserve paragraph breaks and line breaks in the poem section):\n\n\"Honestly, when you proposed, my heart literally stopped for a second. 🥹❤️ It's been so long that we've been together, and in every phase—whether it's laughter, silly fights, mood swings, or life's tensions—we both understood each other, handled everything, and never left each other.\n\nYou're not just my girlfriend; you're my best friend, my peace, and my safe place. 🫶\n\nWe've spent so much time together—random calls, late-night talks, laughing for no reason, listening to each other's problems, sometimes giving advice, sometimes just staying quietly together… and all of those moments are nothing less than a treasure to me.\n\nThank you for being so patient, for listening to all my nonsense, for standing with me in my stressful times, and for making me feel so special.\n\nNot just from today—it's been a long time that you've been my Valentine… today it just became official. 💌❤️\n\nA little poem for you:\n\n“Tere saath har din Valentine jaisa lagta hai,\nTeri hasi se mera har gham halka lagta hai.\nTu saath ho toh darr bhi darr nahi lagta,\nSach kahu… tu hi meri duniya, tu hi mera sab lagta hai.” ❤️✨\n\nI promise, no matter how busy or tough life gets, I will always stand by your side.\n\nHappy Valentine’s Day, my love. 🫶💖\"",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-project-publishable-by-setting-using-a-valid-deployment-domain-slug-that-meets-the-platform-constraints-5-50-characters-only-letters-numbers-and-hyphens-use-a-short-romantic-generic-slug-e-g-valentine-surprise-and-ensure-publishing-no-longer-fails-due-to-an-invalid-domain-slug",
+      "title": "Make the project publishable by setting/using a valid deployment domain/slug that meets the platform constraints (5–50 characters; only letters, numbers, and hyphens). Use a short, romantic, generic slug (e.g., \"valentine-surprise\") and ensure publishing no longer fails due to an invalid domain/slug.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-s-html-document-title-and-any-other-obvious-user-visible-metadata-to-remove-outdated-incorrect-wording-e-g-references-to-good-choice-and-to-use-a-clean-publishable-english-title-appropriate-for-the-valentine-page",
+      "title": "Update the app’s HTML document title and any other obvious user-visible metadata to remove outdated/incorrect wording (e.g., references to “Good choice”) and to use a clean, publishable English title appropriate for the Valentine page.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-small-smooth-animation-for-revealing-the-accepted-state-romantic-letter-after-clicking-yes-e-g-fade-slight-scale-up-with-subtle-stagger-between-header-letter-poem-card",
+      "title": "Add a small, smooth animation for revealing the accepted-state romantic letter after clicking “Yes” (e.g., fade + slight scale-up, with subtle stagger between header/letter/poem card).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-background-music-with-user-controls-play-pause-and-mute-volume-the-music-must-not-autoplay-it-should-start-only-after-an-explicit-user-action-e-g-pressing-play-include-the-audio-as-a-static-frontend-asset-and-keep-playback-working-across-the-transition-from-the-question-view-to-the-accepted-state-letter-view",
+      "title": "Add background music with user controls (play/pause and mute/volume). The music must not autoplay; it should start only after an explicit user action (e.g., pressing Play). Include the audio as a static frontend asset and keep playback working across the transition from the question view to the accepted-state letter view.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-accepted-yes-state-initially-hide-the-romantic-letter-content-behind-a-clickable-tappable-message-cover-overlay-so-the-letter-is-not-readable-until-the-user-explicitly-clicks-taps-the-cover",
+      "title": "In the accepted (\"Yes\") state, initially hide the romantic letter content behind a clickable/tappable \"message cover\" overlay, so the letter is not readable until the user explicitly clicks/taps the cover.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-taps-the-cover-overlay-reveal-the-romantic-letter-using-a-smooth-reveal-animation-sequence-e-g-cover-fades-slides-away-then-letter-content-fades-scales-in-with-a-small-stagger",
+      "title": "When the user clicks/taps the cover overlay, reveal the romantic letter using a smooth reveal animation sequence (e.g., cover fades/slides away, then letter content fades/scales in with a small stagger).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-small-visual-cover-image-for-the-message-cover-overlay-and-include-it-as-a-static-frontend-asset-under-frontend-public-assets-generated-then-render-it-in-the-cover-ui",
+      "title": "Add a small visual cover image for the message cover overlay and include it as a static frontend asset under frontend/public/assets/generated, then render it in the cover UI.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-background-music-file-is-actually-present-as-a-static-frontend-asset-and-is-referenced-by-a-correct-publicly-served-url-from-the-react-app",
+      "title": "Ensure the background music file is actually present as a static frontend asset and is referenced by a correct, publicly served URL from the React app.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-harden-the-audio-play-pause-logic-so-the-ui-accurately-reflects-real-playback-state-and-handles-browser-autoplay-permission-errors-gracefully-without-pretending-it-is-playing-when-playback-fails",
+      "title": "Harden the audio play/pause logic so the UI accurately reflects real playback state and handles browser autoplay/permission errors gracefully (without pretending it is playing when playback fails).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-audio-diagnostics-to-help-detect-why-sound-is-not-coming-e-g-load-error-unsupported-format-muted-volume-0-and-display-a-minimal-non-intrusive-english-status-indicator-near-the-music-controls-when-an-audio-error-occurs",
+      "title": "Add basic audio diagnostics to help detect why sound is not coming (e.g., load error/unsupported format/muted/volume=0), and display a minimal, non-intrusive English status indicator near the music controls when an audio error occurs.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-accepted-state-after-the-romantic-letter-is-fully-revealed-the-current-revealstate-revealed-view-add-a-new-bottom-of-page-interaction-that-appears-below-the-existing-content-and-is-reachable-by-scrolling-i-e-do-not-place-it-in-the-fixed-footer-this-interaction-must-show-a-single-clickable-option-that-progresses-through-these-exact-labels-in-order-on-each-click-1-aur-bhi-kuch-h-2-pkkaaa-naa-3-ek-baar-aur-soch-lo-4-then-replace-the-option-ui-with-the-final-surprise-content-show-the-user-provided-image-and-the-exact-provided-message-text",
+      "title": "In the accepted state after the romantic letter is fully revealed (the current `revealState === 'revealed'` view), add a new bottom-of-page interaction that appears below the existing content and is reachable by scrolling (i.e., do not place it in the fixed footer). This interaction must show a single clickable option that progresses through these exact labels in order on each click: (1) \"aur bhi kuch h👉👈\" (2) \"pkkaaa naa??\" (3) \"ek baar aur soch lo !\" (4) then replace the option UI with the final surprise content: show the user-provided image and the exact provided message text.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-following-exact-message-text-in-the-final-step-of-the-new-bottom-interaction-after-the-third-click-preserving-the-text-exactly-as-provided-by-the-user-including-informal-spelling-and-punctuation-awww-shona-meriiii-yaar-sach-m-aaj-bhot-pyaar-aa-raha-aur-haan-aaj-school-m-merse-ek-bhot-badi-galti-hui-jisme-aapka-naraz-hona-jayaz-tha-now-i-m-feeling-guilty-and-i-m-sorry-baby-abh-maaf-krdo-and-lets-celebrate-valentines-babyyyy-mann-kar-raha-h-aapke-paas-hi-aajauuuu-babyyy-meliiiiiiiii-madam-jiiii-inke-aage-ek-ni-chalti-meriii-but-cute-bhot-h-chalo-jaldi-jaldi-padh-lo-vipul-aapka-intezaar-kr-rha-h-chats-pee-ohkiee-babyy-happiest-valentine-day-cutieeee-bacchii",
+      "title": "Display the following exact message text in the final step of the new bottom interaction (after the third click), preserving the text exactly as provided by the user (including informal spelling and punctuation):\n\n\"awww shona meriiii yaar sach m aaj bhot pyaar aa raha aur haan aaj school m merse ek bhot badi galti hui jisme aapka naraz hona jayaz tha now i m feeling guilty and i m sorry baby abh maaf krdo and lets celebrate valentines babyyyy mann kar raha h aapke paas hi aajauuuu babyyy meliiiiiiiii madam jiiii inke aage ek ni chalti meriii but cute bhot h chalo jaldi jaldi padh lo vipul aapka intezaar kr rha h chats pee ohkiee babyy Happiest valentine day cutieeee bacchii\"",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-uploaded-image-filename-627674318-941888025190821-1390922055753035112-n-jpg-as-a-static-frontend-asset-under-frontend-public-assets-generated-rename-to-a-clean-stable-filename-and-render-it-in-the-final-step-of-the-new-bottom-interaction-at-an-appropriate-size-with-rounded-corners-or-similar-styling-consistent-with-the-current-romantic-theme",
+      "title": "Add the user-uploaded image (filename: \"627674318_941888025190821_1390922055753035112_n.jpg\") as a static frontend asset under `frontend/public/assets/generated/` (rename to a clean, stable filename), and render it in the final step of the new bottom interaction at an appropriate size with rounded corners (or similar styling consistent with the current romantic theme).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-final-step-of-the-bottom-onemorethinginteraction-reveal-after-the-third-click-display-the-user-provided-uploaded-image-original-filename-627674318-941888025190821-1390922055753035112-n-jpg-instead-of-any-placeholder-random-image-by-ensuring-the-correct-file-exists-under-frontend-public-assets-generated-with-a-clean-stable-filename-and-that-frontend-src-components-onemorethinginteraction-tsx-references-that-exact-public-url",
+      "title": "In the final step of the bottom \"OneMoreThingInteraction\" reveal (after the third click), display the user-provided uploaded image (original filename: \"627674318_941888025190821_1390922055753035112_n.jpg\") instead of any placeholder/random image, by ensuring the correct file exists under `frontend/public/assets/generated/` with a clean stable filename and that `frontend/src/components/OneMoreThingInteraction.tsx` references that exact public URL.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a single-purpose Valentine proposal webpage with romantic pink/white theme using HTML, CSS, and JavaScript (runnable locally in Chrome on Windows).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement Yes/No options where the No button moves away on hover so it cannot be clicked.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "On clicking Yes, replace the UI with an organized, romantic presentation of the user-provided custom message (no meme image).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add a small animation to reveal/show the romantic message after clicking Yes.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add background music (with appropriate user controls) to the Valentine webpage.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Make the site publishable by using a valid deployment domain/slug (5–50 chars, only letters/numbers/hyphens) and updating project naming accordingly.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add a clickable cover/overlay on top of the romantic message so the message starts hidden and is revealed with a smooth animation when she clicks/taps the cover.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "On the final/last slide (bottom of page), add a multi-step clickable option sequence: show “aur bhi kuch h👉👈”, then on click replace with “pkkaaa naa??”, then on click replace with “ek baar aur soch lo !”, then on click display the user-uploaded image plus the provided Hindi text message.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine single-page with evasive “No” button and “Good choice” reveal",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

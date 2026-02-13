@@ -1,0 +1,29 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Final reveal uses the user-provided uploaded image as a stable generated asset",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Ensure the final OneMoreThingInteraction reveal displays the user-provided uploaded photo via a stable static asset URL.",
+      "acceptanceCriteria": [
+        "The final surprise view (step >= 3) renders the user-provided photo (from the upload \"627674318_941888025190821_1390922055753035112_n.jpg\") and not any other image.",
+        "The image is served as a static asset from `frontend/public/assets/generated/` and referenced via a `/assets/generated/...` URL (no backend image serving).",
+        "The image renders correctly in Chrome on Windows and still uses appropriate sizing (e.g., contained with a max height) and rounded corners consistent with the current theme.",
+        "There are no broken image links (no 404) when reaching the final surprise view."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/shona-surprise.dim_724x962.jpg",
+          "operation": "modify",
+          "description": "Replace/verify the generated asset so this exact file contains the user-provided uploaded photo (original filename: \"627674318_941888025190821_1390922055753035112_n.jpg\") and remains a clean, stable filename used by the UI."
+        },
+        {
+          "path": "frontend/src/components/OneMoreThingInteraction.tsx",
+          "operation": "modify",
+          "description": "Ensure the final reveal image uses a fixed static URL referencing the exact generated asset at `/assets/generated/shona-surprise.dim_724x962.jpg` (no random/placeholder selection), while keeping existing sizing/rounded-corner styling consistent with the current theme."
+        }
+      ]
+    }
+  ]
+}

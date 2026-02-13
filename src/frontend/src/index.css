@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Romantic pink & white theme */
+        --romantic-primary: 0.65 0.22 350;
+        --romantic-accent: 0.75 0.18 340;
+        --romantic-light: 0.95 0.08 350;
+        --romantic-lighter: 0.98 0.04 350;
+        --romantic-muted: 0.92 0.06 350;
+        --romantic-dark: 0.25 0.08 350;
+        
+        /* Base theme colors using romantic palette */
+        --background: 1 0 0;
+        --foreground: 0.25 0.08 350;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.08 350;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.08 350;
+        --primary: 0.65 0.22 350;
+        --primary-foreground: 1 0 0;
+        --secondary: 0.95 0.08 350;
+        --secondary-foreground: 0.25 0.08 350;
+        --muted: 0.92 0.06 350;
+        --muted-foreground: 0.50 0.08 350;
+        --accent: 0.75 0.18 340;
+        --accent-foreground: 1 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 1 0 0;
+        --border: 0.90 0.06 350;
+        --input: 0.90 0.06 350;
+        --ring: 0.65 0.22 350;
+        --chart-1: 0.65 0.22 350;
+        --chart-2: 0.75 0.18 340;
+        --chart-3: 0.85 0.12 330;
+        --chart-4: 0.70 0.20 345;
+        --chart-5: 0.80 0.15 335;
+        --sidebar: 0.98 0.04 350;
+        --sidebar-foreground: 0.25 0.08 350;
+        --sidebar-primary: 0.65 0.22 350;
+        --sidebar-primary-foreground: 1 0 0;
+        --sidebar-accent: 0.95 0.08 350;
+        --sidebar-accent-foreground: 0.25 0.08 350;
+        --sidebar-border: 0.90 0.06 350;
+        --sidebar-ring: 0.65 0.22 350;
+    }
+
+    .dark {
+        --romantic-primary: 0.70 0.20 350;
+        --romantic-accent: 0.80 0.16 340;
+        --romantic-light: 0.30 0.10 350;
+        --romantic-lighter: 0.25 0.08 350;
+        --romantic-muted: 0.35 0.08 350;
+        --romantic-dark: 0.90 0.04 350;
+        
+        --background: 0.15 0.04 350;
+        --foreground: 0.95 0.04 350;
+        --card: 0.20 0.06 350;
+        --card-foreground: 0.95 0.04 350;
+        --popover: 0.25 0.06 350;
+        --popover-foreground: 0.95 0.04 350;
+        --primary: 0.70 0.20 350;
+        --primary-foreground: 1 0 0;
+        --secondary: 0.30 0.10 350;
+        --secondary-foreground: 0.95 0.04 350;
+        --muted: 0.35 0.08 350;
+        --muted-foreground: 0.65 0.08 350;
+        --accent: 0.40 0.12 350;
+        --accent-foreground: 0.95 0.04 350;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.95 0.04 350;
+        --border: 0.30 0.08 350;
+        --input: 0.30 0.08 350;
+        --ring: 0.65 0.20 350;
+        --chart-1: 0.70 0.20 350;
+        --chart-2: 0.80 0.16 340;
+        --chart-3: 0.60 0.18 330;
+        --chart-4: 0.75 0.18 345;
+        --chart-5: 0.85 0.14 335;
+        --sidebar: 0.20 0.06 350;
+        --sidebar-foreground: 0.95 0.04 350;
+        --sidebar-primary: 0.70 0.20 350;
+        --sidebar-primary-foreground: 1 0 0;
+        --sidebar-accent: 0.30 0.10 350;
+        --sidebar-accent-foreground: 0.95 0.04 350;
+        --sidebar-border: 0.30 0.08 350;
+        --sidebar-ring: 0.65 0.20 350;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}
+
+@layer utilities {
+    .animate-in {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .fade-in {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .slide-in-from-top {
+        animation: slideInFromTop 0.7s ease-out;
+    }
+    
+    /* Cover exit animation */
+    .cover-exit {
+        animation: coverExit 0.6s ease-out forwards;
+    }
+    
+    /* Message reveal animation */
+    .message-reveal {
+        animation: messageReveal 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes coverExit {
+        0% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.9) translateY(-30px);
+        }
+    }
+    
+    @keyframes messageReveal {
+        0% {
+            opacity: 0;
+            transform: scale(0.95) translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+}

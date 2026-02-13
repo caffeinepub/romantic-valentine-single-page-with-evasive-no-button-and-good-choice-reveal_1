@@ -1,0 +1,51 @@
+{
+  "kind": "build_request",
+  "title": "Fix final reveal to display the user-provided uploaded image (not a random image)",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "text": "In the final step of the bottom \"OneMoreThingInteraction\" reveal (after the third click), display the user-provided uploaded image (original filename: \"627674318_941888025190821_1390922055753035112_n.jpg\") instead of any placeholder/random image, by ensuring the correct file exists under `frontend/public/assets/generated/` with a clean stable filename and that `frontend/src/components/OneMoreThingInteraction.tsx` references that exact public URL.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "abey 😭 the image i had given display that na you have just chosen random and shoeing itt plzzz upload my given image"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The final surprise view (step >= 3) renders the user-provided photo (from the upload \"627674318_941888025190821_1390922055753035112_n.jpg\") and not any other image.",
+        "The image is served as a static asset from `frontend/public/assets/generated/` and referenced via a `/assets/generated/...` URL (no backend image serving).",
+        "The image renders correctly in Chrome on Windows and still uses appropriate sizing (e.g., contained with a max height) and rounded corners consistent with the current theme.",
+        "There are no broken image links (no 404) when reaching the final surprise view."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under `frontend/src/components/ui` (compose them only).",
+    "Keep the app fully client-side; do not serve images via the backend.",
+    "Maintain the existing single-actor Motoko backend architecture; no backend changes are required for this fix."
+  ],
+  "nonGoals": [
+    "Do not change the multi-step labels or the final message text content.",
+    "Do not redesign the overall Valentine page layout or add new interactions beyond fixing the image source."
+  ],
+  "imageRequirements": {
+    "required": [
+      "User-provided photo from upload 627674318_941888025190821_1390922055753035112_n.jpg (shona-surprise.dim_724x962.jpg)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

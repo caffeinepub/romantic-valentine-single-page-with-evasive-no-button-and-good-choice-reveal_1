@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Main Valentine's Day page component with interactive Yes/No buttons, evasive No button, three-state reveal system for the romantic letter with smooth animations, persistent background music controls with robust error handling and audio event-driven state management, dismissible audio status indicator, and the new OneMoreThingInteraction component at the bottom of the revealed message.",
+  "frontend/src/index.css": "Global styles with romantic pink OKLCH color system for light and dark modes, plus custom animations including fadeIn, slideInFromTop, fadeInScale, coverExit, and messageReveal for smooth reveal effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens (romantic-primary, romantic-accent, romantic-light, etc.) and Inter font family.",
+  "frontend/deployment.json": "Deployment configuration file that sets the valid domain slug \"valentine-surprise\" for publishing the Valentine page.",
+  "frontend/index.html": "HTML entry point with clean, publishable title \"Valentine Surprise\" without special characters or outdated wording.",
+  "frontend/src/components/MessageCoverOverlay.tsx": "Reusable cover overlay component that displays a romantic envelope image with decorative elements and a clickable call-to-action button to reveal the hidden message.",
+  "frontend/src/components/AudioStatusIndicator.tsx": "Small, non-blocking, dismissible status indicator component that displays audio playback error messages near the music controls with an alert icon and close button.",
+  "frontend/src/components/OneMoreThingInteraction.tsx": "Multi-step interactive component that cycles through three clickable button labels (\"aur bhi kuch h👉👈\", \"pkkaaa naa??\", \"ek baar aur soch lo !\") and then reveals a final surprise with an image and personalized message text."
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T16:36:52.561Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-21",
+        "summary": "In the final step of the bottom \"OneMoreThingInteraction\" reveal (after the third click), display the user-provided uploaded image (original filename: \"627674318_941888025190821_1390922055753035112_n.jpg\") instead of any placeholder/random image, by ensuring the correct file exists under `frontend/public/assets/generated/` with a clean stable filename and that `frontend/src/components/OneMoreThingInteraction.tsx` references that exact public URL.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/shona-surprise.dim_724x962.jpg",
+          "frontend/src/components/OneMoreThingInteraction.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/shona-surprise.dim_724x962.jpg"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/shona-surprise.dim_724x962.jpg",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
